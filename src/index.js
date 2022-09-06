@@ -33,10 +33,34 @@ const buildHeader = () => {
   header.appendChild(contactButton);
 
   content.appendChild(header);
+
+  return header;
+};
+
+const switchSelected = (option = 1) => {
+  const buttons = header.children;
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList = "";
+  }
+  switch (option) {
+    case 1:
+      buttons[0].classList = "selected";
+      break;
+    case 2:
+      buttons[1].classList = "selected";
+      break;
+    case 3:
+      buttons[2].classList = "selected";
+      break;
+    default:
+      buttons[0].classList = "selected";
+      break;
+  }
 };
 
 const switchPage = (page) => {
   deleteOtherPages();
+  switchSelected(page);
   switch (page) {
     case 1:
       buildHomepage();
@@ -80,17 +104,48 @@ const buildHomepage = () => {
   content.appendChild(main);
 };
 
-const buildMenu = () => {};
+const buildMenu = () => {
+  const main = document.createElement("div");
+  const heading = document.createElement("h1");
+  const infoText = document.createElement("p");
 
-const buildContact = () => {};
+  main.id = "main";
+  infoText.id = "info-text";
+
+  heading.textContent = "Restaurant's menu";
+  infoText.textContent =
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe labore laboriosam deleniti, cum ea debitis inventore incidunt, in vel dolorum veritatis earum nulla illo magni voluptatum? Quaerat possimus tenetur nostrum?";
+
+  main.appendChild(heading);
+  main.appendChild(infoText);
+  content.appendChild(main);
+};
+
+const buildContact = () => {
+  const main = document.createElement("div");
+  const heading = document.createElement("h1");
+  const infoText = document.createElement("p");
+
+  main.id = "main";
+  infoText.id = "info-text";
+
+  heading.textContent = "contacts";
+  infoText.textContent =
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe labore laboriosam deleniti, cum ea debitis inventore incidunt, in vel dolorum veritatis earum nulla illo magni voluptatum? Quaerat possimus tenetur nostrum?";
+
+  main.appendChild(heading);
+  main.appendChild(infoText);
+
+  content.appendChild(main);
+};
 
 const deleteOtherPages = () => {
-  const header = document.getElementById("header");
   const otherPage = header.nextSibling;
   if (otherPage != null) {
     otherPage.remove();
   }
 };
 
-buildHeader();
+const header = buildHeader();
 buildHomepage();
+switchSelected();
