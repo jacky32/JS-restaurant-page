@@ -3,17 +3,13 @@ import restaurantImage from "./Restaurant_image.jpg";
 
 const content = document.getElementById("content");
 
-// const restImg = new Image();
-// restImg.src = restaurantImage;
-
-// content.appendChild(restImg);
-
 const buildHeader = () => {
   const header = document.createElement("header");
   const homeButton = document.createElement("div");
   const menuButton = document.createElement("div");
   const contactButton = document.createElement("div");
 
+  header.id = "header";
   homeButton.id = "home";
   menuButton.id = "menu";
   contactButton.id = "contact";
@@ -22,11 +18,39 @@ const buildHeader = () => {
   menuButton.textContent = "Menu";
   contactButton.textContent = "Contact";
 
+  homeButton.addEventListener("click", () => {
+    switchPage(1);
+  });
+  menuButton.addEventListener("click", () => {
+    switchPage(2);
+  });
+  contactButton.addEventListener("click", () => {
+    switchPage(3);
+  });
+
   header.appendChild(homeButton);
   header.appendChild(menuButton);
   header.appendChild(contactButton);
 
   content.appendChild(header);
+};
+
+const switchPage = (page) => {
+  deleteOtherPages();
+  switch (page) {
+    case 1:
+      buildHomepage();
+      break;
+    case 2:
+      buildMenu();
+      break;
+    case 3:
+      buildContact();
+      break;
+    default:
+      buildHomepage();
+      break;
+  }
 };
 
 const buildHomepage = () => {
@@ -54,6 +78,18 @@ const buildHomepage = () => {
   main.appendChild(welcomeText);
 
   content.appendChild(main);
+};
+
+const buildMenu = () => {};
+
+const buildContact = () => {};
+
+const deleteOtherPages = () => {
+  const header = document.getElementById("header");
+  const otherPage = header.nextSibling;
+  if (otherPage != null) {
+    otherPage.remove();
+  }
 };
 
 buildHeader();
