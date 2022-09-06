@@ -51,9 +51,10 @@ h1 {
   font-size: 22px;
   text-align: center;
   margin: 20px;
+  text-transform: uppercase;
 }
 
-p.info-text {
+#info-text {
   text-align: center;
   font-size: 16px;
   text-transform: uppercase;
@@ -66,6 +67,6 @@ p.info-text {
   width: 600px;
 }
 
-p.welcome-text {
+#welcome-text {
   text-align: justify;
 }
