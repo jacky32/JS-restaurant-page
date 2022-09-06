@@ -2,9 +2,131 @@
 <html lang="en">
   <head>
     <title>Restaurant page</title>
-    <script src="main.js" defer></script>
+    <!-- <script src="main.js" defer></script> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 14px;
+        line-height: 25px;
+      }
+
+      #content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 1fr;
+        background-color: #dfe6e9;
+        min-height: 100vh;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #18dcff;
+        user-select: none;
+      }
+
+      header > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 16px;
+        height: 100%;
+      }
+
+      header > div:hover {
+        background-color: #17c0eb;
+      }
+
+      .selected,
+      .selected:hover {
+        background-color: #17c0eb;
+      }
+
+      #main {
+        justify-self: center;
+        align-self: stretch;
+        width: 60vw;
+        padding: 10px;
+        background-color: #dfe6e9;
+      }
+
+      h1 {
+        font-size: 22px;
+        text-align: center;
+        margin: 20px;
+      }
+
+      p.info-text {
+        text-align: center;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin: 20px;
+      }
+
+      #main > img {
+        float: left;
+        margin: 0px 40px 10px 0px;
+        width: 600px;
+      }
+
+      p.welcome-text {
+        text-align: justify;
+      }
+    </style>
   </head>
   <body>
-    <div id="content" style="width: 100vw; height: 100vh"></div>
+    <div id="content">
+      <header>
+        <div id="home" class="selected">Home</div>
+        <div id="menu">Menu</div>
+        <div id="contact">Contact</div>
+      </header>
+      <div id="main">
+        <h1>THE RESTAURANT</h1>
+        <p class="info-text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe labore
+          laboriosam deleniti, cum ea debitis inventore incidunt, in vel dolorum
+          veritatis earum nulla illo magni voluptatum? Quaerat possimus tenetur
+          nostrum?
+        </p>
+        <img src="../src/Restaurant_image.jpg" alt="" srcset="" />
+        <p class="welcome-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos excepturi
+          illum voluptas recusandae alias magnam saepe soluta unde hic, fugiat
+          sint quae! Autem sint est nobis repellat quisquam eaque beatae! Lorem
+          ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam
+          deserunt eveniet assumenda molestiae perferendis quaerat iste nulla
+          libero. Dolorum, obcaecati magnam. Laborum, eos a. Nihil dolorem porro
+          expedita placeat! Provident labore id exercitationem vitae alias
+          expedita laborum soluta, autem ullam odio illum, accusantium
+          repudiandae eius in animi incidunt. Quas illo odio tempora provident,
+          maxime doloremque velit voluptatum distinctio praesentium? Quae animi
+          iste quos modi delectus tempora ipsum soluta amet culpa, officiis
+          placeat! Rem eos totam, molestias facilis, quod similique in vero
+          consequatur labore suscipit, quisquam perspiciatis quia itaque
+          voluptatibus! Sed assumenda animi minima quaerat atque debitis nisi
+          rerum nesciunt obcaecati velit provident deleniti dolor rem, nemo
+          nostrum? Odio eveniet corporis totam quaerat incidunt veniam tenetur
+          laboriosam ipsam, molestias corrupti? Nulla laboriosam at commodi
+          rerum corporis aperiam, sint pariatur, fugiat repudiandae adipisci
+          dolores ab reprehenderit exercitationem mollitia natus officia vero
+          iusto alias in! Incidunt sapiente, sunt delectus et nulla repellendus.
+          Dolorem amet cum labore magnam dolores temporibus, fuga magni
+          exercitationem nam placeat accusamus ipsum numquam saepe quod
+          sapiente. Magni distinctio quae dolores consequuntur dolorem laborum
+          molestiae fugit, quam incidunt corrupti. Suscipit debitis incidunt
+          dolorem cumque minus et quia laboriosam assumenda numquam repudiandae
+          quisquam rem vitae, asperiores neque dolores repellendus ea. Inventore
+          id labore numquam incidunt aperiam assumenda ducimus reiciendis
+          adipisci! Sequi iusto, et animi totam atque cumque quam nam veniam
+          veritatis, enim esse pariatur, beatae odio impedit maiores. Quas rem
+          quos ducimus sapiente fugit! Aut neque ipsa dolorum possimus
+          molestiae.
+        </p>
+      </div>
+    </div>
   </body>
 </html>
